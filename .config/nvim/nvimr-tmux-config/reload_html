@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# After knitting, we lose focus of this window,
+# so lets save its id and then select it with wmctrl at the end
+NVIMWINDOW=`echo "$WINDOWID"`
+
+# Get the document title because Firefox use it in the window name
+WINNAME=`grep '<title>.*</title>' "$1" | sed -e 's/.*<title>\(.*\)<\/title>.*/\1/'`
+
+# If the title is empty, use the file name
+if [ "x$WINNAME" = "x" ]
+then
+   WINNAME=$1
+fi
+
+# Check if the page is already open
+xdotool search --name "$WINNAME" windowactivate --sync
+
+if [ "$?" = "0" ]
+then
+   # The page is open; emulate the F5 key press to refresh it:
+   xdotool search --name "$WINNAME" key --clearmodifiers F5
+else
+   # Start the browser
+   firefox "$1" &
+fi
+
+# Select the window with neovim again
+wmctrl -i -a $NVIMWINDOW

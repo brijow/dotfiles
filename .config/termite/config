@@ -1,0 +1,88 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = DejaVu Sans Mono 13.5
+scrollback_lines = 10000
+search_wrap = true
+icon_name = utilities-terminal
+geometry = 800x550
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+browser = exo-open
+filter_unmatched_urls = true
+
+# [colors]
+# background = rgba(28,32,35,0.94)
+# foreground = #E2E2E2
+# foreground_bold = #E2E2E2
+# cursor = #707880
+# 
+# color0 = #1c2023
+# color1 = #bf616a
+# color2 = #a3be8c
+# color3 = #ebcb8b
+# color4 = #8fa1b3
+# color5 = #b48ead
+# color6 = #96b5b4
+# color7 = #E1E1E1
+# color8 = #1c2023
+# color9 = #bf616a
+# color10 = #a3be8c
+# color11 = #ebcb8b
+# color12 = #8fa1b3
+# color13 = #b48ead
+# color14 = #96b5b4
+# color15 = #c0c5ce
+
+[colors]
+## this is tomorrow dark, except with the special section here:
+## special
+background = rgba(28,32,35)
+foreground = #E2E2E2
+foreground_bold = #E2E2E2
+cursor = #707880
+
+# special
+#foreground      = #c5c8c6
+#foreground_bold = #c5c8c6
+#cursor          = #c5c8c6
+#background      = #1d1f21
+
+# black
+color0  = #1d1f21
+color8  = #969896
+
+# red
+color1  = #cc6666
+color9  = #cc6666
+
+# green
+color2  = #55bd58
+color10 = #55bd58
+
+# yellow
+color3  = #f0c674
+color11 = #f0c674
+
+# blue - custom
+color4  = #5192be
+color12 = #5192be
+
+# magenta
+color5  = #b294bb
+color13 = #b294bb
+
+# cyan
+color6  = #8abeb7
+color14 = #8abeb7
+
+# white
+color7  = #c5c8c6
+color15 = #ffffff
