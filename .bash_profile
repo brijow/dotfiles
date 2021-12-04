@@ -25,7 +25,7 @@ alias csdb="bash ~/.scripts/cscopeDB.sh"
 #alias web-env="conda activate web_env"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias 'em'='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias got='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias got='/usr/local/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # PS1 config
 #export PS1="\[\033[38;5;251m\][\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;208m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\]][\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;39m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;251m\]]\n🐍 "
