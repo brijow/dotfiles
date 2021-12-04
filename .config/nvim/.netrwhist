@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/brijow/gitlab-test/blog/content/blog/hello-world'
+let g:netrw_dirhist_5='/Users/brijow/gitlab-test/blog/content/blog'
+let g:netrw_dirhist_4='/Users/brijow/gitlab-test/blog/src/templates'
+let g:netrw_dirhist_3='/Users/brijow/gitlab-test/blog/src'
+let g:netrw_dirhist_2='/Users/brijow/gitlab-test/blog/src/pages'
+let g:netrw_dirhist_1='/Users/brijow/gitlab-test/blog/src'
+let g:netrw_dirhist_0='/Users/brijow/gitlab-test/blog'
+let g:netrw_dirhist_9='/Users/brijow/gitlab-test/blog/src/components'
+let g:netrw_dirhist_8='/Users/brijow/gitlab-test/blog/src'
+let g:netrw_dirhist_7='/Users/brijow/gitlab-test/blog/src/pages'
