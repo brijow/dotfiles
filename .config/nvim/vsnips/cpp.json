@@ -1,0 +1,190 @@
+{
+  "author": {
+    "prefix": "info",
+    "body": [
+      "/*=============================================================================",
+      "#  Author:          ${1: xindzju - https://github.com/xindzju/}",
+      "#  Email:           ${2: xindeng3@gmail.com}",
+      "#  FileName:        ${3: test.cpp}",
+      "#  Description:     ${4: /}",
+      "#  Version:         ${5: 0.0.1}",
+      "#  History:         $6",
+      "=============================================================================*/",
+      "$7"
+    ],
+    "descriptioin": "File info"
+  },
+
+  "cpp": {
+    "prefix": "cpp",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "   $1",
+      "   cin.get();",
+      "   return 0;",
+      "}"
+    ],
+    "description": "C++ quick start"
+  },
+
+  "cpp-OpenCV": {
+    "prefix": "cv",
+    "body": [
+      "#include <iostream>",
+      "#include <opencv2/opencv.hpp>",
+      "",
+      "using namespace std;",
+      "using namespace cv;",
+      "",
+      "int main() {",
+      "   $1",
+      "   cin.get();",
+      "   return 0;",
+      "}"
+    ],
+    "description": "C++ quick start for OpenCV"
+  },
+
+  "cpp-unittest": {
+    "prefix": "unittest",
+    "body": [
+      "#define CATCH_CONFIG_MAIN",
+      "#include \"catch.hpp\"  //git@github.com:catchorg/Catch2.git",
+      "$1",
+      "",
+      "TEST_CASE(\"$2\") {",
+      "    //set up",
+      "    $3",
+      "    //test sections",
+      "    SECTION(\"$4\") {",
+      "        $5",
+      "        REQUIRE($6)",
+      "    }",
+      "    $7",
+      "    //tear down",
+      "    $8",
+      "}"
+    ],
+    "description": "C++ unittest using catch"
+  },
+
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class A {", 
+      "public:", 
+      "\t$1", 
+      "private:", 
+      "\t$2", "}"
+    ],
+    "description": "C++ class template"
+  },
+
+  "port2sys": {
+    "prefix": "pt2",
+    "body": [
+      "#ifdef _WIN32",
+      "   $1",
+      "#else",
+      "   $2",
+      "#endif",
+      "   $3"
+    ],
+    "description": "C++ port template"
+  },
+
+  "port3sys": {
+    "prefix": "pt3",
+    "body": [
+      "#ifdef _WIN32",
+      "   $1",
+      "#elif __linux__",
+      "   $2",
+      "#else",
+      "#error unsupported OS",
+      "#endif",
+      "   $4"
+    ],
+    "description": "C++ port template"
+  },
+
+  "main": {
+    "prefix": "main",
+    "body": "int main()\n{\n\t${0}\n}"
+  },
+  "forc": {
+    "prefix": "forc",
+    "body": "for (${6:auto} ${1:i} = ${2:v.begin()}; `!p import re; snip.rv = re.split(\"[^\\w]\",t[1])[-1]` ${4:!=} ${3:`!p m = re.search(r'^(?:(.*)(\\.|->)begin\\(\\)|((?:std|boost)::)?begin\\((.*)\\))$', t[2]); snip.rv = (((m.group(3) if m.group(3) else \"\") + \"end(\" + m.group(4) + \")\") if m.group(4) else (m.group(1) + m.group(2) + \"end()\")) if m else \"\"`}; ${5:++`!p snip.rv = t[1].split(\" \")[-1]`}) {\n\t${VISUAL}$0\n}",
+    "description": "general for loop (for)"
+  },
+  "beginend": {
+    "prefix": "beginend",
+    "body": "${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()",
+    "description": "$1.begin(), $1.end() (beginend)"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "class ${1:`!p snip.rv = snip.basename or \"name\"`}\n{\npublic:\n\t${1/(\\w+).*/$1/} (${2:arguments});\n\tvirtual ~${1/(\\w+).*/$1/} ();\n\nprivate:\n\t${0:/* data */}\n};",
+    "description": "class .. (class)"
+  },
+  "ns": {
+    "prefix": "ns",
+    "body": "namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or \"name\"`}\n{\n\t${VISUAL}$0\n}${1/.+/ \\/* /m}$1${1/.+/ *\\/ /m}",
+    "description": "namespace .. (namespace)"
+  },
+  "readfile": {
+    "prefix": "readfile",
+    "body": "std::vector<char> v;\nif (FILE *fp = fopen(${1:\"filename\"}, \"r\"))\n{\n\tchar buf[1024];\n\twhile(size_t len = fread(buf, 1, sizeof(buf), fp))\n\t\tv.insert(v.end(), buf, buf + len);\n\tfclose(fp);\n}",
+    "description": "read file (readF)"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "std::map<${1:key}, ${2:value}> map$0;",
+    "description": "std::map (map)"
+  },
+  "vector": {
+    "prefix": "vector",
+    "body": "std::vector<${1:char}> v$0;",
+    "description": "std::vector (v)"
+  },
+  "tp": {
+    "prefix": "tp",
+    "body": "template <typename ${1:_InputIter}>",
+    "description": "template <typename ..> (template)"
+  },
+  "cla": {
+    "prefix": "cla",
+    "body": "#ifndef ${2:`!v substitute(vim_snippets#Filename('$1_H','ClassName'),'.*','\\U&\\E','')`}\n#define $2\n\nclass ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\\u&',''), '_\\(\\w\\)', '\\u\\1', 'g')`}\n{\nprivate:\n\t$3\n\npublic:\n\t$1();\n\tvirtual ~$1();\n};\n\n#endif /* $2 */",
+    "description": "An entire .h generator"
+  },
+  "fnc": {
+    "prefix": "fnc",
+    "body": "/**\n* @brief: ${4:brief}\n*\n* @param: `!p write_docstring_args(t[3],snip)`\n*\n* @return: `!p snip.rv = t[1]`\n*/\n${1:ReturnType} ${2:FunctionName}(${3:param})\n{\n\t${0:FunctionBody}\n}",
+    "description": "Basic c++ doxygen function template"
+  },
+  "boost_test": {
+    "prefix": "boost_test",
+    "body": "#define BOOST_TEST_MODULE ${1:TestModuleName}\n#include <boost/test/included/unit_test.hpp>\n\nBOOST_AUTO_TEST_CASE(${2:TestCaseName})\n{\n\t${0:TestDefinition}\n}\n",
+    "description": "Boost test module"
+  },
+  "boost_suite": {
+    "prefix": "boost_suite",
+    "body": "#define BOOST_TEST_MODULE ${1:TestModuleName}\n#include <boost/test/included/unit_test.hpp>\n\nBOOST_AUTO_TEST_SUITE(${2:SuiteName})\n\nBOOST_AUTO_TEST_CASE(${3:TestCaseName})\n{\n\t${0:TestDefinition}\n}\n\nBOOST_AUTO_TEST_SUITE_END()\n",
+    "description": "Boost test suite module"
+  },
+  "boost_test_fixture": {
+    "prefix": "boost_test_fixture",
+    "body": "#define BOOST_TEST_MODULE ${1:TestModuleName}\n#include <boost/test/included/unit_test.hpp>\n\nstruct ${2:FixtureName} {\n\t$2() {}\n\tvirtual ~$2() {}\n\t/* define members here */\n};\n\nBOOST_FIXTURE_TEST_CASE(${3:SuiteName}, $2)\n{\n\t${0:TestDefinition}\n}\n",
+    "description": "Boost test module with fixture"
+  },
+  "boost_suite_fixture": {
+    "prefix": "boost_suite_fixture",
+    "body": "#define BOOST_TEST_MODULE ${1:TestModuleName}\n#include <boost/test/included/unit_test.hpp>\n\nstruct ${2:FixtureName} {\n\t$2() {}\n\tvirtual ~$2() {}\n\t/* define members here */\n};\n\nBOOST_FIXTURE_TEST_SUITE(${3:SuiteName}, $2)\n\nBOOST_AUTO_TEST_CASE(${4:TestCaseName})\n{\n\t${0:TestDefinition}\n}\n\nBOOST_AUTO_TEST_SUITE_END()\n",
+    "description": "Boost test suite with fixture"
+  }
+}
+

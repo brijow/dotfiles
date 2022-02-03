@@ -1,6 +1,0 @@
-setxkbmap && setxkbmap -option 'caps:ctrl_modifier'
-xcape && xcape -e "Caps_Lock=Escape"
-xmodmap -e "keycode 47 = colon semicolon"
-
-#xrandr && xrandr --output eDP1 --mode 1600x900
-xrandr && xrandr --output eDP1 --mode 1920x1080
